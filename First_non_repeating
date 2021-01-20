@@ -1,0 +1,28 @@
+def First_non_repeating():
+    string = str(input("Enter the repeating string to find First non-repeating string : "))
+    order = []
+    data = None
+    counts = {}
+    Arr = []
+    #counting the repited strings ex: {'a':2,'b':1}...like this 
+    for c in string:
+        if c in counts:
+            counts[c] += 1
+        else:
+            counts[c] = 1
+            order.append(c)
+    for c in order:
+        if counts[c] == 1:
+            data = c
+            break
+
+    if data != None:
+        for i in string:
+            Arr.append(i)
+        for j in Arr:
+            if j == data:
+                print(f"The index number of First non-repeating value is : {Arr.index(j)}")
+                break
+    else:
+        print("-1")
+First_non_repeating():
